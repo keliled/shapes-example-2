@@ -16,11 +16,11 @@ string Shape::ToString() const {
 	return "{Shape}";
 }
 
-// This methods are pure virtual not defined anymore
-//double Shape::Area() const {
-//	return -1.0;
-//}
-//
-//double Shape::Perimeter() const {
-//	return -1.0;
-//}
+ //This methods are pure virtual not defined anymore
+double Shape::Area() const {
+	return -1.0;
+}
+
+double Shape::Perimeter() const {
+	return -1.0;
+}

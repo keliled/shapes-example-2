@@ -66,7 +66,7 @@ int main() {
 		}else if (menuOption == 7){ // List all Ellipses
 			cout << "Only Ellipses" << endl;
 			for (Shape* shape: shapes){
-				if (dynamic_cast<Ellipse*>(shape) != nullptr) {
+				if (dynamic_cast<Ellipse*>(shape) != nullptr) { //The shape pointer is trying to find if it actually points to an object of the Ellipse
 					Ellipse* ellipse = dynamic_cast<Ellipse*>(shape);
 					cout << shape->ToString() << endl;
 					cout << "\tPerimeter:    " << shape->Perimeter() << endl;
@@ -75,11 +75,30 @@ int main() {
 					cout << endl;
 				}
 			}
-		}else if (menuOption == 8){ // List all Triangles
+        }else if (menuOption == 8){ // List all Triangles
+            cout << "Only Triangles" << endl;
+            for (Shape* shape : shapes) {
+                if (Triangle* triangle = dynamic_cast<Triangle*>(shape)) {
+                    cout << shape->ToString() << endl;
+                    cout << "\tPerimeter:    " << shape->Perimeter() << endl;
+                    cout << "\tArea:         " << shape->Area() << endl;
+                    cout << endl;
+                }
+            }
+            }
 
-		}else if (menuOption == 9){ // List all Rectangles
+    else if (menuOption == 9){ // List all Rectangles
+            cout << "Only Rectangles" << endl;
+            for (Shape* shape : shapes) {
+                if (Rectangle* rectangle = dynamic_cast<Rectangle*>(shape)) {
+                    cout << shape->ToString() << endl;
+                    cout << "\tPerimeter:    " << shape->Perimeter() << endl;
+                    cout << "\tArea:         " << shape->Area() << endl;
+                    cout << endl;
+                }
+            }
 
-		}else if (menuOption == 10){ // List all shapes
+            }else if (menuOption == 10){ // List all shapes
 			for (Shape* shape: shapes){
 				cout << shape->ToString() << endl;
 				cout << "\tPerimeter:    " << shape->Perimeter() << endl;
